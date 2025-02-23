@@ -423,14 +423,13 @@ class AboutPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // App Logo or Icon
-
-            // App Name and Tagline
-            Center(
-              child: Text(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center, // Center vertically
+            crossAxisAlignment: CrossAxisAlignment.center, // Center horizontally
+            children: [
+              // App Name and Tagline
+              Text(
                 'Llamabenchmark',
                 style: TextStyle(
                   fontSize: 28,
@@ -438,10 +437,8 @@ class AboutPage extends StatelessWidget {
                   color: Colors.blue,
                 ),
               ),
-            ),
-            SizedBox(height: 10),
-            Center(
-              child: Text(
+              SizedBox(height: 10),
+              Text(
                 'Created by Rohan, Theo and Sahil',
                 style: TextStyle(
                   fontSize: 16,
@@ -449,68 +446,68 @@ class AboutPage extends StatelessWidget {
                   color: Colors.grey[600],
                 ),
               ),
-            ),
-            SizedBox(height: 30),
+              SizedBox(height: 30),
 
-            // About the App
-            Text(
-              'About Llamabenchmark',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+              // About the App
+              Text(
+                'About Llamabenchmark',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Llamabenchmark is a powerful tool designed to help users download, manage, and benchmark large language models (LLMs)',
-              style: TextStyle(
-                fontSize: 16,
-                height: 1.5,
+              SizedBox(height: 10),
+              Text(
+                'Llamabenchmark is a powerful tool designed to help users download, manage, and benchmark large language models (LLMs)',
+                style: TextStyle(
+                  fontSize: 16,
+                  height: 1.5,
+                ),
+                textAlign: TextAlign.center, // Center text
               ),
-            ),
-            SizedBox(height: 20),
+              SizedBox(height: 20),
 
-            // Features
-            Text(
-              'Features',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+              // Features
+              Text(
+                'Features',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 10),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                FeatureItem(icon: Icons.download, text: 'Download and manage LLM models.'),
-                FeatureItem(icon: Icons.assessment, text: 'Benchmark models for performance evaluation.'),
-                FeatureItem(icon: Icons.thumb_up, text: 'Simple and user-friendly interface.'),
-                FeatureItem(icon: Icons.update, text: 'Regular updates with new models and features.'),
-              ],
-            ),
-            SizedBox(height: 20),
+              SizedBox(height: 10),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center, // Center horizontally
+                children: [
+                  FeatureItem(icon: Icons.download, text: 'Download and manage LLM models.'),
+                  FeatureItem(icon: Icons.assessment, text: 'Benchmark models to evaluate perfomance.'),
+                  FeatureItem(icon: Icons.thumb_up, text: 'Simple and user-friendly interface.'),
+                  FeatureItem(icon: Icons.update, text: 'Regular updates with new features.'),
+                ],
+              ),
+              SizedBox(height: 20),
 
-            // Contact Information
-            Text(
-              'Contact Us',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+              // Contact Information
+              Text(
+                'Contact Us',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Have questions or feedback?\nSpam rh609@sussex.ac.uk',
-              style: TextStyle(
-                fontSize: 16,
-                height: 1.5,
+              SizedBox(height: 10),
+              Text(
+                'Have questions or feedback?\nSpam rh609@sussex.ac.uk',
+                style: TextStyle(
+                  fontSize: 16,
+                  height: 1.5,
+                ),
+                textAlign: TextAlign.center, // Center text
               ),
-            ),
-            SizedBox(height: 20),
+              SizedBox(height: 20),
 
-            // Version Information
-            Center(
-              child: Text(
+              // Version Information
+              Text(
                 'Version: 1.0.0',
                 style: TextStyle(
                   fontSize: 16,
@@ -518,15 +515,14 @@ class AboutPage extends StatelessWidget {
                   color: Colors.grey[600],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-// Custom widget for feature items
 class FeatureItem extends StatelessWidget {
   final IconData icon;
   final String text;
@@ -538,8 +534,10 @@ class FeatureItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start, // Align to the start (left)
+        crossAxisAlignment: CrossAxisAlignment.center, // Center vertically
         children: [
+          SizedBox(width: 40), // Add space to shift icons to the right
           Icon(icon, size: 24, color: Colors.blue),
           SizedBox(width: 10),
           Expanded(
